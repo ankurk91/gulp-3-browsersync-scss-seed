@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "comment-whitespace-inside": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "value-no-vendor-prefix": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "gulp-BrowserSync-SCSS",
+  "description": "Gulp BrowserSync SCSS",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "browsersync"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ankurk91/gulp-browsersync-scss-seed.git"
+  },
+  "author": "ankurk91",
+  "bugs": "https://github.com/ankurk91/gulp-browsersync-scss-seed/issues",
+  "scripts": {
+    "start": "./node_modules/.bin/gulp serve",
+    "test": "./node_modules/.bin/gulp dist"
+  },
+  "engines": {
+    "node": "^4.4.7",
+    "npm": "^3.10.2"
+  },
+  "engineStrict": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "jquery": "^2.2.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-file-include": "^0.13.7",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-stylelint": "^2.0.2",
+    "gulp-uglify": "^1.5.4",
+    "gulp-util": "^3.0.7",
+    "stylelint-config-standard": "^10.0.0"
+  },
+  "optionalDependencies": {}
+}

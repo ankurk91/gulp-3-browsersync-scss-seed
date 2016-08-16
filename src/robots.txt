@@ -1,0 +1,4 @@
+# www.robotstxt.org/
+# Disallowed Everything
+User-agent: *
+Disallow: /

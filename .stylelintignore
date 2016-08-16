@@ -1,0 +1,8 @@
+# http://stylelint.io/user-guide/configuration/#stylelintignore
+
+node_modules/
+bower_components/
+
+dist/
+tmp/
+

@@ -1,0 +1,38 @@
+{
+  /** http://eslint.org/docs/rules/
+      0 - turn the rule off
+      1 - turn the rule on as a warning (doesn't affect exit code)
+      2 - turn the rule on as an error (exit code is 1 when triggered)
+  */
+
+  "rules": {
+    "indent": [
+      0,
+      4
+    ],
+    "quotes": [
+      1,
+      "single"
+    ],
+    "semi": [
+      1,
+      "always"
+    ],
+    "no-unused-vars": 1,
+    "no-mixed-spaces-and-tabs": 0,
+    "no-undef": 1,
+    "no-console": 1,
+    "camelcase": 2
+  },
+  "env": {
+    "browser": true,
+    "node": false,
+    "amd": false,
+    "es6": false
+  },
+  "globals": {
+    "jQuery": true
+  },
+  "plugins": [],
+  "extends": "eslint:recommended"
+}
