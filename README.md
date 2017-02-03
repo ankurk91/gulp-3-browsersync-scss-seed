@@ -1,14 +1,13 @@
 # gulp-BrowserSync-SASS-seed
 
 [![Build Status](https://travis-ci.org/ankurk91/gulp-browsersync-scss-seed.svg?branch=master)](https://travis-ci.org/ankurk91/gulp-browsersync-scss-seed)
-[![Dependency Status](https://www.versioneye.com/user/projects/57ad5c71cb5df2003d6434c2/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57ad5c71cb5df2003d6434c2)
 [![License](https://img.shields.io/github/license/ankurk91/gulp-browsersync-scss-seed.svg?maxAge=3600)]()
 
 > A quick starter kit for front-end development
 
 ### Prerequisites
-* node js ^4.4.7
-* npm ^3.10.2
+* node js >=4.4.7
+* npm >=3.10.2
 * [gulp-cli](https://github.com/gulpjs/gulp-cli)  ```npm install -g gulp-cli@1.2```
 
 
