@@ -22,11 +22,11 @@
       img: './src/img/**/*.{png,jpg,jpeg,gif,svg}'
     },
     tmp: {
-      baseDir: './tmp',
-      css: './tmp/css/**/*.css',
-      html: './tmp/**/*.html',
-      js: './tmp/js/**/*.js',
-      img: './tmp/img/**/*.{png,jpg,jpeg,gif,svg}'
+      baseDir: './.tmp',
+      css: './.tmp/css/**/*.css',
+      html: './.tmp/**/*.html',
+      js: './.tmp/js/**/*.js',
+      img: './.tmp/img/**/*.{png,jpg,jpeg,gif,svg}'
     }
   };
 
@@ -44,7 +44,7 @@
    * @param err
    */
   var onError = function (err) {
-    gutil.log(gutil.colors.bgRed.bold('Error: '), err.message);
+    gutil.log(gutil.colors.red('Error: '), err.message);
     gutil.beep();
     this.emit('end');
   };
@@ -54,7 +54,7 @@
    * @ref http://www.browsersync.io/docs/options/
    * @more https://github.com/BrowserSync/recipes
    */
-  gulp.task('serve', ['serve:clean', 'serve:sass', 'serve:html', 'serve:scripts'], function () {
+  gulp.task('default', ['serve:clean', 'serve:sass', 'serve:html', 'serve:scripts'], function () {
     browserSync.init({
       server: {
         baseDir: paths.tmp.baseDir,

@@ -6,10 +6,8 @@
 > A quick starter kit for front-end development
 
 ### Prerequisites
-* node js >=4.4.7
-* npm >=3.10.2
-* [gulp-cli](https://github.com/gulpjs/gulp-cli)  ```npm install -g gulp-cli@1.2```
-
+* node js >=6.9.1
+* npm >=3.10.10
 
 ### Quick Start
 * Download the latest [zip](https://github.com/ankurk91/gulp-browsersync-scss-seed/zipball/master) file from GitHub
@@ -21,23 +19,23 @@ cd projects/gulp-browsersync-scss-seed
 npm install
 
 # Start browserSync server, serve from tmp folder 
-gulp serve
+npm start 
 ```
 
 ### Generate files for production
 ```
-gulp dist
+npm run build
 ```
-You can distribute ```dist``` folder
+You can distribute ```build``` folder
 
 ### Directory Structure 
 
 ```
 ├── project-name/
-│   ├── dist/
+│   ├── build/
 │   ├── node_modules/
 │   ├── tasks/
-│   ├── tmp/
+│   ├── .tmp/
 │   ├── src/
 │   │   ├── img/
 │   │   ├── js/

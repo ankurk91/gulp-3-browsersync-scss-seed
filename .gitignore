@@ -62,5 +62,5 @@ composer.phar
 *.crt
 
 # Project related
-/dist/*
-/tmp/*
+/build/*
+/.tmp/*
