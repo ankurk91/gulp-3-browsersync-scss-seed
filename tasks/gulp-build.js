@@ -41,23 +41,23 @@
         ]
       }
     },
-    dist: {
-      baseDir: './dist',
-      css: './dist/css/',
-      js: './dist/js/',
-      img: './dist/img/',
-      fonts: './dist/fonts/'
+    build: {
+      baseDir: './build',
+      css: './build/css/',
+      js: './build/js/',
+      img: './build/img/',
+      fonts: './build/fonts/'
     }
   };
 
 
   // Clean dist folder
-  gulp.task('dist:clean', function () {
-    del.sync(paths.dist.baseDir, {force: true})
+  gulp.task('build:clean', function () {
+    del.sync(paths.build.baseDir, {force: true})
   });
 
   //Custom java script
-  gulp.task('dist:scripts.app', ['dist:clean'], function () {
+  gulp.task('build:scripts.app', ['build:clean'], function () {
     return gulp.src(paths.src.js)
       .pipe(stripDebug())
       .pipe(eslint({configFilePath: './.eslintrc.json'}))
@@ -66,15 +66,15 @@
       .pipe(uglify())
       .pipe(concat('app.min.js'))
       .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(paths.dist.js))
+      .pipe(gulp.dest(paths.build.js))
       .on('error', gutil.log);
   });
 
   // No need to minify vendor scripts
-  gulp.task('dist:scripts.vendors', ['dist:clean'], function () {
+  gulp.task('build:scripts.vendors', ['build:clean'], function () {
     return gulp.src(paths.src.vendors.scripts)
       .pipe(concat('vendors.min.js'))
-      .pipe(gulp.dest(paths.dist.js))
+      .pipe(gulp.dest(paths.build.js))
       .on('error', gutil.log);
 
   });
@@ -83,7 +83,7 @@
    * Compile scss
    * see options here https://github.com/sass/node-sass
    */
-  gulp.task('dist:styles.app', ['dist:clean'], function () {
+  gulp.task('build:styles.app', ['build:clean'], function () {
     return gulp.src(paths.src.scss)
       .pipe(stylelint({
         reporters: [
@@ -106,15 +106,15 @@
       .pipe(csso())
       .pipe(rename('style.min.css'))
       .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(paths.dist.css))
+      .pipe(gulp.dest(paths.build.css))
       .on('error', gutil.log);
   });
 
   // No need to minify vendor styles
-  gulp.task('dist:styles.vendors', ['dist:clean'], function () {
+  gulp.task('build:styles.vendors', ['build:clean'], function () {
     return gulp.src(paths.src.vendors.styles)
       .pipe(concat('vendors.min.css'))
-      .pipe(gulp.dest(paths.dist.css))
+      .pipe(gulp.dest(paths.build.css))
       .on('error', gutil.log);
   });
 
@@ -122,7 +122,7 @@
    *  Compile html files
    *  @link https://github.com/coderhaoxin/gulp-file-include
    */
-  gulp.task('dist:html', ['dist:clean'], function () {
+  gulp.task('build:html', ['build:clean'], function () {
     return gulp.src(paths.src.html)
       .pipe(fileinclude({
         prefix: '@@',
@@ -131,29 +131,29 @@
       .pipe(processhtml())
       .pipe(htmlhint('./.htmlhintrc'))
       .pipe(htmlhint.failReporter())
-      .pipe(gulp.dest(paths.dist.baseDir))
+      .pipe(gulp.dest(paths.build.baseDir))
       .on('error', gutil.log);
   });
 
   //Copy fonts
-  gulp.task('dist:fonts', ['dist:clean'], function () {
+  gulp.task('build:fonts', ['build:clean'], function () {
     return gulp.src(paths.src.vendors.fonts)
-      .pipe(gulp.dest(paths.dist.fonts))
+      .pipe(gulp.dest(paths.build.fonts))
       .on('error', gutil.log);
 
   });
 
   //Copy images
-  gulp.task('dist:images', ['dist:clean'], function () {
+  gulp.task('build:images', ['build:clean'], function () {
     return gulp.src(paths.src.img)
-      .pipe(gulp.dest(paths.dist.img))
+      .pipe(gulp.dest(paths.build.img))
       .on('error', gutil.log);
 
   });
 
-  gulp.task('dist', ['dist:clean', 'dist:scripts.app', 'dist:scripts.vendors', 'dist:html', 'dist:styles.app', 'dist:styles.vendors', 'dist:fonts', 'dist:images'], function (cb) {
+  gulp.task('build', ['build:clean', 'build:scripts.app', 'build:scripts.vendors', 'build:html', 'build:styles.app', 'build:styles.vendors', 'build:fonts', 'build:images'], function (cb) {
 
-    gutil.log('Dist: ', gutil.colors.white.bgGreen.bold('Finished dist task!'));
+    gutil.log('build: ', gutil.colors.green.bold('Finished build task!'));
 
   });
 
